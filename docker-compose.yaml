@@ -1,0 +1,11 @@
+services:
+  artsync:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: artsync:latest
+    container_name: artsync
+    env_file: .env
+    ports:
+      - "${PORT:-8080}:8080"
+    restart: unless-stopped
