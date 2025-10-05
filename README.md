@@ -1,6 +1,6 @@
 # 🎨 WLED ArtSync
 
-Turn **album art** into **WLED colors**. This tiny Express server receives Plex webhooks, extracts 2–3 colors using `node-vibrant`, and pushes them to WLED for an ambient effect. When playback actually stops, it can optionally fade back to white.
+Turn **album art** into **WLED colors**. This tiny Express server receives Plex webhooks, extracts 2–3 colors using `node-vibrant`, and pushes them to WLED for an ambient effect. When playback stops, it can optionally fade back to white.
 
 ---
 
@@ -13,7 +13,7 @@ Turn **album art** into **WLED colors**. This tiny Express server receives Plex 
 
 ## 🚀 Quick Start (Docker)
 
-1. Create `.env` (see **Config** below).
+1. Create `.env` (see **Config** below), or configure environment variables inside `docker-compose.yaml`
 2. Build & run:
    ```bash
    docker compose up -d
@@ -51,9 +51,13 @@ RETURNWHITE=true
 WHITE_DELAY_MS=2000
 ```
 
-Notes:
+---
+
+## 📝Notes:
+
 * With WLED RGBW strips, enable `Auto-White` in the LED preferences. This program sends simple RGB values; WLED derives the white channel.
 * If you still see white flashes between songs, increase the `WHITE_DELAY_MS` (e.g. 2000 => 2500)
+* Additional information on Plex webhooks can be found in [Plex Support](https://support.plex.tv/articles/115002267687-webhooks/)
 
 ---
 

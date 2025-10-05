@@ -5,7 +5,7 @@ const getColors: (filePath: string) => Promise<number[][]> = async (filePath) =>
     return Array.isArray(arr) && arr.length === 3 && arr.every(n => typeof n === 'number')
   }
 
-  let v = new Vibrant('./tmp/thumb.jpg')
+  let v = new Vibrant(filePath)
   const palette = await v.getPalette()
 
   return [

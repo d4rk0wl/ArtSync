@@ -57,5 +57,7 @@ app.listen(port, () => {
     console.log("Temp directory created")
   }
 
+  console.log(`WLED Address: ${process.env.WLEDADDR}`)
+  console.log(`WLED Segments: ${process.env.SEGMENTS}`)
   console.log(`Application listening on port ${port}`)
 })
